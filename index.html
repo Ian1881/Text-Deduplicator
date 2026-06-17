@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Deduplicator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-container">
+      <header class="app-header">
+        <h1>Text Deduplicator</h1>
+        <p>Paste your text row-by-row to filter out duplicates.</p>
+      </header>
+
+      <div class="workspace">
+        <section class="panel input-panel">
+          <label for="reviewInput">Raw Text (One per line)</label>
+          <textarea
+            id="reviewInput"
+            placeholder="Paste your table columns here...&#10;Review 1&#10;Review 2&#10;Review 1"
+            spellcheck="false"
+          ></textarea>
+          <div class="panel-meta">
+            <span id="inputCount">Lines: 0</span>
+          </div>
+        </section>
+
+        <section class="action-panel">
+          <button id="btnCheck" class="btn-primary">Remove Duplicates</button>
+          <button id="btnClear" class="btn-secondary">Clear</button>
+        </section>
+
+        <section class="panel output-panel">
+          <label for="reviewOutput">Cleaned Text (Unique)</label>
+          <textarea
+            id="reviewOutput"
+            readonly
+            placeholder="Cleaned results will appear here..."
+            spellcheck="false"
+          ></textarea>
+          <div class="panel-meta">
+            <span id="outputCount">Lines: 0</span>
+          </div>
+          <button id="copy-button" class="btn-secondary">Copy Reviews</button>
+        </section>
+
+        <section class="panel output-panel">
+          <label for="duplicatedReviews">These were duplicated</label>
+          <textarea
+            id="duplicatedReviews"
+            readonly
+            placeholder="Duplicate text will appear here..."
+            spellcheck="false"
+          ></textarea>
+          <div class="panel-meta">
+            <span id="duplicateCount">Lines: 0</span>
+          </div>
+          <button id="duplicate-copy-button" class="btn-secondary">
+            Copy Duplicates
+          </button>
+        </section>
+      </div>
+    </main>
+    <script src="script.js"></script>
+    <footer class="app-footer">
+      <p>by Ian&reg;</p>
+    </footer>
+  </body>
+</html>
